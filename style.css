@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#etchasketch {
+    padding: 5%;
+    background-color: bisque;
+    
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block {
+    background-color: lightblue;
+}
+
+
+
