@@ -4,7 +4,11 @@ let gridSize = 16;
 let etchasketch = document.querySelector('#etchasketch');
 
 function onHover(block) {
-    block.style.backgroundColor = "blue";
+    block.style.backgroundColor = getRandomColor();
+    //block.style.backgroundColor = "black";
+    console.log(block.style.opacity);
+    block.style.opacity = (parseFloat(block.style.opacity) + 0.1).toString();
+    console.log(block.style.opacity);
 }
 
 const gridSizeBtn = document.querySelector("#gridSizeBtn");
@@ -29,6 +33,7 @@ function createPage() {
             //Gotta set the width and height of each block to take the right amount of space.
             block.style.width = `calc(100vh/${gridSize})`;
             block.style.height = `calc(100vh/${gridSize})`;
+            block.style.opacity = 0.1;
             //add the effect when it hovers
             block.addEventListener('mouseover', () => {onHover(block)});
             row.appendChild(block);
@@ -50,7 +55,15 @@ function clearPage() {
     }
 }
 
-
+//Stolen code
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
 
 createPage();
 
